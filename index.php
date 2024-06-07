@@ -290,8 +290,6 @@ $os = shell_exec('cat /etc/os-release | grep PRETTY_NAME | cut -d\'=\' -f2');
 
 
 
-<!-- Logout Modal-->
-<?php include('./includes/logoutModal.php')?>
 <?php
 include('./includes/footer.php');
 ?>

@@ -35,7 +35,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="add.php?p=users">Add Users</a>
-                        <a class="collapse-item" href="view_details.php?p=student">View Users</a>
+                        <a class="collapse-item" href="view.php?p=users">View Users</a>
                     </div>
                 </div>
             </li>
@@ -53,7 +53,7 @@
                 <div id="collapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="add.php?p=groups">Add Groups</a>
-                        <a class="collapse-item" href="view_details.php?p=student">View Groups</a>
+                        <a class="collapse-item" href="view.php?p=groups">View Groups</a>
                     </div>
                 </div>
             </li>

@@ -150,7 +150,4 @@ include('./config/dbConfig.php');
 
 
 
-
-<!-- Logout Modal-->
-<?php include('./includes/logoutModal.php')?>
 <?php include('./includes/footer.php')?>

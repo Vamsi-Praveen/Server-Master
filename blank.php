@@ -47,6 +47,4 @@
     <i class="fas fa-angle-up"></i>
 </a>
 
-<!-- Logout Modal-->
-<?php include('./includes/logoutModal.php')?>
 <?php include('./includes/footer.php')?>
