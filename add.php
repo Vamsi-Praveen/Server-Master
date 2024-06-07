@@ -11,18 +11,18 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
 <?php
 if($_SERVER['REQUEST_METHOD']=='POST' && $_GET['p'] == 'users'){
     if(isset($_POST['submit'])){
-        $username =  escapeshellarg($_POST['username']);
-        $password = escapeshellarg($_POST['password']);
+        $username =  escapeshellcmd($_POST['username']);
+        $password = escapeshellcmd($_POST['password']);
         $role = escapeshellarg($_POST['role']);
         $shell = escapeshellarg($_POST['shell']);
         $forceLogin = isset($_POST['force-login']) ? 1 : 0;
     }
         //2>&1 -> gives stderror
-    $command = "sudo useradd -s $shell $username 2>&1";
+    $command = "sudo useradd -m -s $shell $username 2>&1";
     $output = shell_exec($command);
     if($output == null){
             //user added successfully
-        $passwordFile = tempnam(sys_get_temp_dir(),'passwd');
+        $passwordFile = tempnam(sys_get_temp_dir(),'password');
         file_put_contents($passwordFile, "$username:$password");
 
         $passwordCommand = "sudo chpasswd < $passwordFile 2>&1";
@@ -35,7 +35,14 @@ if($_SERVER['REQUEST_METHOD']=='POST' && $_GET['p'] == 'users'){
                 $forceLoginOutput = shell_exec($forceLoginCommand);
                 if($forceLoginOutput != null){
                     echo "Error ".$forceLoginOutput;
+                }else
+                {
+                    echo "<script>alert('User Added Succesfull')</script>";
                 }
+            }
+            else
+            {
+                echo "<script>alert('User Added Succesfull')</script>";
             }
         }else
         {
